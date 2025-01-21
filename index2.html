@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Card</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    /* Card Styling */
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px;
+    }
+
+    .card-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .read-more-btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Connections Styling */
+    .connections {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .profile-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+    }
+
+    .profile {
+      width: 40px;
+      height: 40px;
+      border: 2px solid white;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-container .profile:nth-child(2) {
+      margin-left: -15px;
+      z-index: 1;
+    }
+
+    .profile-container .profile:nth-child(3) {
+      margin-left: -15px;
+      z-index: 2;
+    }
+
+    .connections-text {
+      font-size: 0.8rem;
+      color: #777;
+      margin-left: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .card {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <div class="card">
+    <img src="https://t3.ftcdn.net/jpg/08/52/51/04/360_F_852510478_KdKJ1xGmlHICE8TD3QM68W6m7m1E7fHT.jpg"
+      alt="Card Image" class="card-image">
+    <div class="card-content">
+      <h2 class="card-title">Card Title</h2>
+      <p class="card-description">This is a description of the card. It can contain more details about the content or
+        topic.</p>
+      <button class="read-more-btn">Read More</button>
+      <div class="connections">
+        <div class="profile-container">
+          <div class="profile">
+            <img src="https://t3.ftcdn.net/jpg/08/52/51/04/360_F_852510478_KdKJ1xGmlHICE8TD3QM68W6m7m1E7fHT.jpg"
+              alt="Profile 1">
+          </div>
+          <div class="profile">
+            <img src="https://t3.ftcdn.net/jpg/08/52/51/04/360_F_852510478_KdKJ1xGmlHICE8TD3QM68W6m7m1E7fHT.jpg"
+              alt="Profile 2">
+          </div>
+          <div class="profile">
+            <img src="https://t3.ftcdn.net/jpg/08/52/51/04/360_F_852510478_KdKJ1xGmlHICE8TD3QM68W6m7m1E7fHT.jpg"
+              alt="Profile 3">
+          </div>
+        </div>
+        <span class="connections-text">+5 connections</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
