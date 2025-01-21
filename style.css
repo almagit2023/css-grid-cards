@@ -90,6 +90,52 @@ header {
   color: rgba(128, 0, 128, 0.75);
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: rgb(244, 205, 244);
+  padding: 1rem;
+}
+
+.mobile-navigation ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mobile-navigation ul li {
+  margin: 1rem 0;
+}
+
+.mobile-navigation ul li a {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.mobile-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.mobile-auth button {
+  width: 100%;
+}
+
 .first-row {
   background-color: purple;
   color: #fff;
@@ -180,9 +226,52 @@ table th, td {
   justify-items: left;
 }
 
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  position: relative;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-container .profile:nth-child(2) {
+  margin-left: -20px;
+  z-index: 1;
+}
+
+
 @media screen and (max-width : 1200px) {}
 
-@media screen and (max-width : 768px) {
+@media screen and (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navigation, .auth-block {
+    display: none;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
   .profile-cards-blocks {
     grid-template-columns: 1fr;
   }
@@ -191,7 +280,13 @@ table th, td {
     grid-template-columns: 1fr;
   }
 
+  .profile-card img {
+    min-width: 33%;
+  }
 
+  .profile-card-content {
+    padding: 0;
+  }
 
   .header {
     flex-wrap: wrap;
