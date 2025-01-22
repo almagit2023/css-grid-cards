@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Page with Bootstrap</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .sidebar {
+      background-color: #f8f9fa;
+      height: 100vh;
+      padding: 1rem;
+    }
+
+    .main-content {
+      padding: 1rem;
+    }
+
+    .card {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .btn-follow {
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    .btn-ignore {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .card-img {
+      width: 150px;
+      /* Fixed width for the image */
+      height: 150px;
+      /* Fixed height for the image */
+      object-fit: cover;
+      border-radius: 8px 0 0 8px;
+    }
+
+    .card-body {
+      flex: 1;
+      /* Allow the card body to take remaining space */
+      padding: 1rem;
+    }
+
+    /* Ensure no gap between sidebar and main content */
+    .container-fluid {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .col-md-3,
+    .col-md-9 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+
+    .profile-container {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 10px;
+      position: relative;
+    }
+
+    .profile {
+      width: 40px;
+      height: 40px;
+      border: 2px solid white;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-container .profile:nth-child(2) {
+      margin-left: -20px;
+      z-index: 1;
+    }
+
+    @media screen and (max-width:768px) {
+      .sidebar {
+        height: 20vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Messages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Connections</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Account Center</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <button class="btn btn-primary me-2">Create Account</button>
+          <button class="btn btn-outline-primary">Login</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3  vh-20 p-3 border-end">
+        <h5 class="fw-bold mb-4">Notifications</h5>
+        <ul class="list-group list-group-flush rounded-top">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center border-bottom p-2 bg-primary text-white">
+            Follow Requests
+            <span class="badge bg-light text-dark">4</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between border-bottom align-items-center bg-light border-0 p-2">
+            Suggestions
+            <span class="badge bg-secondary">10+</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between border-bottom align-items-center bg-light border-0 p-2">
+            Today's Birthday
+            <span class="badge bg-secondary">1</span>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between border-bottom align-items-center bg-light border-0 p-2">
+            Close Friends
+            <span class="badge bg-secondary">10</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="col-md-9 main-content">
+        <h3>Follow Requests</h3>
+        <div class="row">
+          <!-- User Cards -->
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                class="card-img" alt="Alexander">
+              <div class="card-body">
+                <h5 class="card-title">Alexander</h5>
+                <div class="profile-container">
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 1">
+                  </div>
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 2">
+                  </div>
+                </div>
+                <p class="card-text">2 mutual connections</p>
+                <button class="btn btn-follow">Follow</button>
+                <button class="btn btn-ignore">Ignore</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                class="card-img" alt="Sophia Lee">
+              <div class="card-body">
+                <h5 class="card-title">Sophia Lee</h5>
+                <div class="profile-container">
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 1">
+                  </div>
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 2">
+                  </div>
+                </div>
+                <p class="card-text">1 mutual connection</p>
+                <button class="btn btn-follow">Follow</button>
+                <button class="btn btn-ignore">Ignore</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                class="card-img" alt="Emily Jaz">
+              <div class="card-body">
+                <h5 class="card-title">Emily Jaz</h5>
+                <div class="profile-container">
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 1">
+                  </div>
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 2">
+                  </div>
+                </div>
+                <p class="card-text">2 mutual connections</p>
+                <button class="btn btn-follow">Follow</button>
+                <button class="btn btn-ignore">Ignore</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                class="card-img" alt="Bella Holla">
+              <div class="card-body">
+                <h5 class="card-title">Bella Holla</h5>
+                <p class="card-text">3 mutual connections</p>
+                <div class="profile-container">
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 1">
+                  </div>
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 2">
+                  </div>
+                </div>
+                <button class="btn btn-follow">Follow</button>
+                <button class="btn btn-ignore">Ignore</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                class="card-img" alt="Brete Lee">
+              <div class="card-body">
+                <h5 class="card-title">Brete Lee</h5>
+                <div class="profile-container">
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 1">
+                  </div>
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 2">
+                  </div>
+                </div>
+                <p class="card-text">2 mutual connections</p>
+                <button class="btn btn-follow">Follow</button>
+                <button class="btn btn-ignore">Ignore</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img
+                src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                class="card-img" alt="Isaac Newton">
+              <div class="card-body">
+                <h5 class="card-title">Isaac Newton</h5>
+                <div class="profile-container">
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 1">
+                  </div>
+                  <div class="profile">
+                    <img
+                      src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+                      alt="Profile 2">
+                  </div>
+                </div>
+                <p class="card-text">3 mutual connections</p>
+                <button class="btn btn-follow">Follow</button>
+                <button class="btn btn-ignore">Ignore</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3">
+          <p>1802 more</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
